@@ -80,7 +80,9 @@ To use the Smart Bookmark API, follow the steps below to set it up and start mak
     ```
     6.2. Docker
     ```bash
-    docker-compose up -d
+
+        docker-compose up -d
+    
     ```
 
 The API will now be running at `http://127.0.0.1:8000`.
