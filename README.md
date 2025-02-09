@@ -92,6 +92,11 @@ The API will now be running at `http://127.0.0.1:8000`.
 
 * Python 3.7+
 * FastAPI (RESTful Python framework)
+* MongoDB (NoSQL database)
+
+
+## Licence
+This projet uses the [MIT license](https://github.com/ziguifrido/smart-bookmark-api/blob/master/LICENSE.md).
 
 ## Author
 
