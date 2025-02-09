@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-load_dotenv('.env.local')
+load_dotenv(dotenv_path='.env.local', override=True)
 
 MONGODB_URL = os.getenv("MONGODB_URL")
 
