@@ -96,7 +96,7 @@ The API will now be running at `http://127.0.0.1:8000`.
 
 
 ## Licence
-This projet uses the [MIT license](https://github.com/ziguifrido/smart-bookmark-api/blob/master/LICENSE.md).
+This projet uses the [MIT license](https://github.com/ziguifrido/smart-bookmark-api/blob/main/LICENSE.md).
 
 ## Author
 
