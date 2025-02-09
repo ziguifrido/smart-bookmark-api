@@ -51,7 +51,17 @@ To use the Smart Bookmark API, follow the steps below to set it up and start mak
 
 ```
 
-4. Set up your database
+4. Set up your environment variables
+
+    4.1. Copy the `.env` file to a local one
+    ```bash
+
+      cp .env .env.local
+
+    ```
+    4.2. Fill the `.env.local` file with your own values
+
+5. Set up your database
 
 ```bash
 
@@ -59,13 +69,21 @@ To use the Smart Bookmark API, follow the steps below to set it up and start mak
 
 ```
 
-5. Start the API server
+6. Start the API server
 
-```bash
+    6.1. Locally   
 
-  fastapi dev main.py
+    ```bash
 
-```
+      fastapi dev main.py
+
+    ```
+    6.2. Docker
+    ```bash
+
+        docker-compose up -d
+    
+    ```
 
 The API will now be running at `http://127.0.0.1:8000`.
 
@@ -74,6 +92,11 @@ The API will now be running at `http://127.0.0.1:8000`.
 
 * Python 3.7+
 * FastAPI (RESTful Python framework)
+* MongoDB (NoSQL database)
+
+
+## Licence
+This projet uses the [MIT license](https://github.com/ziguifrido/smart-bookmark-api/blob/master/LICENSE.md).
 
 ## Author
 
