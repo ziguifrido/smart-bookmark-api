@@ -13,7 +13,7 @@ def bookmark_result(result):
         not_found('No Bookmark found')
         
 def bookmark_results(results):
-    if results.to_list() == []:
+    if len(results) == 0:
         not_found('No Bookmark found')
         
 def bookmark_update(update):
@@ -30,7 +30,7 @@ def group_result(result):
         not_found('No Group found')
         
 def group_results(results):
-    if results.to_list() == []:
+    if len(results) == 0:
         not_found('No Group found')
         
 def group_update(update):

@@ -8,6 +8,12 @@ class BookmarkService:
     def __init__(self):
         self.db_connection = get_db_connection()
         self.collection = self.db_connection.get_collection('BookmarkCollection')
+
+    def find_all(self):
+        cursor = self.collection.find()
+        results = cursor.to_list()      
+        validate.bookmark_results(results)                    
+        return results
      
     def find_by_id(self, id: str):
         validate.object_id(id)
@@ -15,26 +21,24 @@ class BookmarkService:
         validate.bookmark_result(result)            
         return result
         
-    def find_all(self):
-        results = self.collection.find()        
-        validate.bookmark_results(results)                    
-        return results.to_list()
-        
     def find_by_title(self, title: str):
-        results = self.collection.find({'title': title})
+        cursor = self.collection.find({'title': title})
+        results = cursor.to_list()
         validate.bookmark_results(results)    
-        return results.to_list()
+        return results
     
     def find_by_group_id(self, group_id: str):
         validate.object_id(group_id)
-        results = self.collection.find({'group_id': group_id})
+        cursor = self.collection.find({'group_id': group_id})
+        results = cursor.to_list()
         validate.bookmark_results(results)
-        return results.to_list()
+        return results
 
     def find_by_tag(self, tag: str):
-        results = self.collection.find({'tags': tag})
+        cursor = self.collection.find({'tags': tag})
+        results = cursor.to_list()
         validate.bookmark_results(results)
-        return results.to_list()
+        return results
 
     def create(self, bookmark: Bookmark):
         new_bookmark = self.collection.insert_one(bookmark.model_dump())
