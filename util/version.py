@@ -53,4 +53,4 @@ def main():
     save_version(f'{major}.{minor}.{patch}')
     
 
-if __name__ == "__main__": main()
+if __name__ == '__main__': main()
