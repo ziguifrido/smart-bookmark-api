@@ -12,21 +12,23 @@ class GroupService:
         self.collection = self.db_connection.get_collection('GroupCollection')
         self.bookmark_service = BookmarkService()
 
+    def find_all(self):
+        cursor = self.collection.find()        
+        results = cursor.to_list()
+        validate.group_results(results)                    
+        return results
+
     def find_by_id(self, id: str):
         validate.object_id(id)
         result = self.collection.find_one({'_id': ObjectId(id)})
         validate.group_result(result)   
         return result
         
-    def find_all(self):
-        results = self.collection.find()        
-        validate.group_results(results)                    
-        return results.to_list()
-        
     def find_by_title(self, title: str):
-        results = self.collection.find({'title': title})
+        cursor = self.collection.find({'title': title})
+        results = cursor.to_list()
         validate.group_results(results)    
-        return results.to_list()
+        return results
 
     def create(self, group: Group):
         new_group = self.collection.insert_one(group.model_dump())
